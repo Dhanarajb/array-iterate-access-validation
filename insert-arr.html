@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <input type="text" placeholder="enter position" id="position" />
+    <input type="text" placeholder="enter newEl" id="newel" />
+    <button onclick="InsertClick()">Insert</button>
+    <script>
+      function InsertClick() {
+        let arr = [12, 54, 87, 66, 2, 09];
+        let newEl = document.getElementById('newel').value;
+        newEl = parseInt(newEl);
+        let position = document.getElementById('position').value;
+        console.log(arr);
+        for (let i = arr.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            arr[i + 1] = arr[i];
+            if (i == position) {
+              arr[i] = newEl;
+            }
+          }
+        }
+        console.log(arr);
+      }
+    </script>
+  </body>
+</html>
